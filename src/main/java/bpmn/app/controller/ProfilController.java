@@ -5,7 +5,7 @@ import java.util.Locale;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 
-import bpmn.app.model.User;
+import bpmn.app.model.AppUser;
 import bpmn.app.service.UserService;
 import bpmn.app.utilities.UserUtilities;
 import bpmn.app.validators.ChangePasswordValidator;
@@ -32,10 +32,10 @@ public class ProfilController {
     @RequestMapping(value = "/profil")
     public String showUserProfilePage(Model model) {
         String username = UserUtilities.getLoggedUser();
-        User user = userService.findUserByEmail(username);
-        boolean isAdmin = user.getRoles().iterator().next().getRole().equals("ROLE_ADMIN");
+        AppUser appUser = userService.findUserByEmail(username);
+        boolean isAdmin = appUser.getRoles().iterator().next().getRole().equals("ROLE_ADMIN");
         model.addAttribute("isAdmin", isAdmin);
-        model.addAttribute("user", user);
+        model.addAttribute("user", appUser);
         return "profil";
     }
 
@@ -43,21 +43,21 @@ public class ProfilController {
     @RequestMapping(value = "/editpassword")
     public String editUserPassword(Model model) {
         String username = UserUtilities.getLoggedUser();
-        User user = userService.findUserByEmail(username);
-        model.addAttribute("user", user);
+        AppUser appUser = userService.findUserByEmail(username);
+        model.addAttribute("user", appUser);
         return "editpassword";
     }
 
     @POST
     @RequestMapping(value = "/updatepass")
-    public String changeUSerPassword(User user, BindingResult result, Model model, Locale locale) {
+    public String changeUSerPassword(AppUser appUser, BindingResult result, Model model, Locale locale) {
         String returnPage;
-        new ChangePasswordValidator().validate(user, result);
-        new ChangePasswordValidator().checkPasswords(user.getNewPassword(), result);
+        new ChangePasswordValidator().validate(appUser, result);
+        new ChangePasswordValidator().checkPasswords(appUser.getNewPassword(), result);
         if (result.hasErrors()) {
             returnPage = "editpassword";
         } else {
-            userService.updateUserPassword(user.getNewPassword(), user.getEmail());
+            userService.updateUserPassword(appUser.getNewPassword(), appUser.getEmail());
             returnPage = "editpassword";
             model.addAttribute("message", messageSource.getMessage("passwordChange.success", null, locale));
         }
@@ -68,20 +68,20 @@ public class ProfilController {
     @RequestMapping(value = "/editprofil")
     public String changeUserData(Model model) {
         String username = UserUtilities.getLoggedUser();
-        User user = userService.findUserByEmail(username);
-        model.addAttribute("user", user);
+        AppUser appUser = userService.findUserByEmail(username);
+        model.addAttribute("user", appUser);
         return "editprofil";
     }
 
     @POST
     @RequestMapping(value = "/updateprofil")
-    public String changeUserDataAction(User user, BindingResult result, Model model, Locale locale) {
+    public String changeUserDataAction(AppUser appUser, BindingResult result, Model model, Locale locale) {
         String returnPage;
-        new EditUserProfileValidator().validate(user, result);
+        new EditUserProfileValidator().validate(appUser, result);
         if (result.hasErrors()) {
             returnPage = "editprofil";
         } else {
-            userService.updateUserProfile(user.getName(), user.getLastName(), user.getEmail(), user.getId());
+            userService.updateUserProfile(appUser.getName(), appUser.getLastName(), appUser.getEmail(), appUser.getId());
             model.addAttribute("message", messageSource.getMessage("profilEdit.success", null, locale));
             returnPage = "afteredit";
         }

@@ -1,6 +1,6 @@
 package bpmn.app.validators;
 
-import bpmn.app.model.User;
+import bpmn.app.model.AppUser;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -12,12 +12,12 @@ public class EditUserProfileValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> cls) {
-		return User.class.equals(cls);
+		return AppUser.class.equals(cls);
 	}
 
 	@Override
 	public void validate(Object obj, Errors errors) {
-		User u = (User) obj;
+		AppUser u = (AppUser) obj;
 		
 		ValidationUtils.rejectIfEmpty(errors, "name", "error.userName.empty");
 		ValidationUtils.rejectIfEmpty(errors, "lastName", "error.userLastName.empty");

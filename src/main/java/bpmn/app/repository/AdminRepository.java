@@ -1,6 +1,6 @@
 package bpmn.app.repository;
 
-import bpmn.app.model.User;
+import bpmn.app.model.AppUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,12 +10,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository("adminRepository")
-public interface AdminRepository extends JpaRepository<User, Integer> {
+public interface AdminRepository extends JpaRepository<AppUser, Integer> {
 
-    User findUserById(int id);
+    AppUser findUserById(int id);
 
     @Modifying
-    @Query("UPDATE User u SET u.active = :intActive WHERE u.id = :id")
+    @Query("UPDATE AppUser u SET u.active = :intActive WHERE u.id = :id")
     void updateActivationUser(@Param("intActive") int active, @Param("id") int id);
 
     @Modifying
@@ -23,7 +23,7 @@ public interface AdminRepository extends JpaRepository<User, Integer> {
     void updateRoleUser(@Param("roleId") int nrRoli, @Param("id") int id);
 
     @Query(value = "SELECT * FROM User u WHERE u.name LIKE %:param% OR u.last_name LIKE %:param% OR email LIKE %:param%", nativeQuery = true)
-    Page<User> findAllSearch(@Param("param") String param, Pageable pageable);
+    Page<AppUser> findAllSearch(@Param("param") String param, Pageable pageable);
 
     @Modifying
     @Query(value = "DELETE FROM user_role WHERE user_id = :id", nativeQuery = true)

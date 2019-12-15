@@ -1,0 +1,47 @@
+#OG�LNA
+spring.mvc.view.prefix=/page/jsp/
+spring.mvc.view.suffix=.jsp
+spring.mvc.static-path-pattern=/resources/**
+
+spring.http.encoding.charset=UTF-8
+spring.http.encoding.enabled=true
+
+spring.resources.chain.strategy.content.enabled=true
+spring.resources.chain.strategy.content.paths=/**
+
+server.tomcat.additional-tld-skip-patterns=hk2-utils.jar,javax.annotation-api.jar,javax.inject.jar,hk2-api.jar,config-types.jar,hk2-core.jar,hk2-config.jar,tiger-types.jar,validation-api.jar,jboss-logging.jar,classmate.jar,hk2-locator.jar,javassist.jar,hk2-runlevel.jar,class-model.jar,asm-all-repackaged.jar
+
+#DATA SOURCE I BAZA DANYCH
+spring.datasource.url=jdbc:postgresql://localhost:5432/BPMN?characterEncoding=utf-8
+spring.datasource.username=postgres
+spring.datasource.password=12345
+spring.datasource.testWhileIdle=true
+spring.datasource.validationQuery=SELECT 1
+spring.jpa.properties.hibernate.id.new_generator_mappings=false
+
+#HIBERNATE
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+hibernate.jdbc.batch_size=50
+
+#SPRING SECURITY
+spring.queries.users-query=select email, password, active from app_user where email=?
+spring.queries.roles-query=select u.email, r.role from app_user u inner join app_user_roles ur on(u.id=ur.user_id) inner join role r on(ur.roles_id=r.id) where u.email=?
+
+# Internacjonalizacja
+spring.messages.always-use-message-format=false
+spring.messages.basename=messages
+spring.messages.encoding=UTF-8
+spring.messages.fallback-to-system-locale=true
+
+# MAIL
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=dawidek78652@gmail.com
+spring.mail.password=Haslo123
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+prod.server.address=http://localhost:8080

@@ -25,7 +25,7 @@
 			<s:message code="register.email"/>
 		</td>
 		<td width="270" align="left">
-			<c:out value="${user.email }"/>
+			<c:out value="${appUser.email }"/>
 		</td>
 	</tr>
 	
@@ -34,7 +34,7 @@
 			<s:message code="register.name"/>
 		</td>
 		<td width="270" align="left">
-			<c:out value="${user.name }"/>
+			<c:out value="${appUser.name }"/>
 		</td>
 	</tr>
 	
@@ -43,7 +43,7 @@
 			<s:message code="register.lastName"/>
 		</td>
 		<td width="270" align="left">
-			<c:out value="${user.lastName }"/>
+			<c:out value="${appUser.lastName }"/>
 		</td>
 	</tr>
 	
@@ -53,7 +53,7 @@
 		</td>
 		<td width="270" align="left">
 			<c:choose>
-				<c:when test="${user.active == 1 }">
+				<c:when test="${appUser.active == 1 }">
 					<s:message code="word.tak"/>
 				</c:when>
 				<c:otherwise>
@@ -73,7 +73,7 @@
 					<s:message code="word.admin"/>
 				</c:when>
 				<c:otherwise>
-					<s:message code="word.user"/>
+					<s:message code="word.appUser"/>
 				</c:otherwise>
 			</c:choose>
 		</td>

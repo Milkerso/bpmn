@@ -1,6 +1,6 @@
 package bpmn.app.service;
 
-import bpmn.app.model.User;
+import bpmn.app.model.AppUser;
 import bpmn.app.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUserByEmail(String email) {
+    public AppUser findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 

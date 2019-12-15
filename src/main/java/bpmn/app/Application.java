@@ -1,7 +1,7 @@
 package bpmn.app;
 
+import bpmn.app.model.AppUser;
 import bpmn.app.model.Role;
-import bpmn.app.model.User;
 import bpmn.app.repository.RoleRepository;
 import bpmn.app.repository.UserRepository;
 import org.springframework.boot.SpringApplication;
@@ -42,20 +42,20 @@ public class Application {
         Role roleUser = new Role();
         roleUser.setRole("ROLE_USER");
         roleUser = roleRepository.save(roleUser);
-        User user = new User();
-        user.setActive(1);
-        user.setName("Jan");
-        user.setLastName("Kowalski");
-        user.setSex("Men");
-        user.setAddress("Lodz");
-        user.setEmail("user@wp.pl");
-        user.setPassword("haslo123");
-        user.setPesel(12345678901l);
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<Role>(Arrays.asList(roleUser)));
-        userRepository.save(user);
+        AppUser appUser = new AppUser();
+        appUser.setActive(1);
+        appUser.setName("Jan");
+        appUser.setLastName("Kowalski");
+        appUser.setSex("Men");
+        appUser.setAddress("Lodz");
+        appUser.setEmail("user@wp.pl");
+        appUser.setPassword("haslo123");
+        appUser.setPesel(12345678901l);
+        appUser.setPassword(bCryptPasswordEncoder.encode(appUser.getPassword()));
+        appUser.setRoles(new HashSet<Role>(Arrays.asList(roleUser)));
+        userRepository.save(appUser);
 
-        User admin = new User();
+        AppUser admin = new AppUser();
         admin.setActive(1);
         admin.setName("Michal");
         admin.setLastName("Nowak");

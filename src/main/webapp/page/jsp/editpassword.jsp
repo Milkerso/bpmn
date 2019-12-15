@@ -22,7 +22,7 @@
 		<c:out value="${message }" />
 </p>
 
-<sf:form id="usersForm" action="updatepass" modelAttribute="user"
+<sf:form id="usersForm" action="updatepass" modelAttribute="appUser"
 		enctype="multipart/form-data" method="POST">
 
 		<sf:hidden path="email"/>
