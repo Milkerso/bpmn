@@ -28,7 +28,7 @@ hibernate.jdbc.batch_size=50
 
 #SPRING SECURITY
 spring.queries.users-query=select email, password, active from app_user where email=?
-spring.queries.roles-query=select u.email, r.role from app_user u inner join app_user_roles ur on(u.id=ur.user_id) inner join role r on(ur.roles_id=r.id) where u.email=?
+spring.queries.roles-query=select u.email, r.role from app_user u inner join app_user_roles ur on(u.id=ur.app_user_id) inner join role r on(ur.roles_id=r.id) where u.email=?
 
 # Internacjonalizacja
 spring.messages.always-use-message-format=false
