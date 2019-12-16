@@ -73,19 +73,19 @@ public class ProfilController {
         return "editprofil";
     }
 
-    @POST
-    @RequestMapping(value = "/updateprofil")
-    public String changeUserDataAction(AppUser appUser, BindingResult result, Model model, Locale locale) {
-        String returnPage;
-        new EditUserProfileValidator().validate(appUser, result);
-        if (result.hasErrors()) {
-            returnPage = "editprofil";
-        } else {
-            userService.updateUserProfile(appUser.getName(), appUser.getLastName(), appUser.getEmail(), appUser.getId());
-            model.addAttribute("message", messageSource.getMessage("profilEdit.success", null, locale));
-            returnPage = "afteredit";
-        }
-        return returnPage;
-    }
+//    @POST
+//    @RequestMapping(value = "/updateprofil")
+//    public String changeUserDataAction(AppUser appUser, BindingResult result, Model model, Locale locale) {
+//        String returnPage;
+//        new EditUserProfileValidator().validate(appUser, result);
+//        if (result.hasErrors()) {
+//            returnPage = "editprofil";
+//        } else {
+//            userService.updateUserProfile(appUser.getappUser.getEmail(), appUser.getId());
+//            model.addAttribute("message", messageSource.getMessage("profilEdit.success", null, locale));
+//            returnPage = "afteredit";
+//        }
+//        return returnPage;
+//    }
 
 }

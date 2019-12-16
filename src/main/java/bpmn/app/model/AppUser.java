@@ -2,9 +2,11 @@ package bpmn.app.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 import java.util.Set;
 
 @Entity
+@Table(name = "appUser")
 public class AppUser {
 
     @Id
@@ -14,30 +16,30 @@ public class AppUser {
     @NotNull
     private String email;
 
-
     @NotNull
     private String password;
 
     @NotNull
-    private String name;
-
-    @NotNull
-    private String lastName;
-
-    @NotNull
     private int active;
-
-    // additional description
-
-    private String address;
-
-    private String sex;
-
-    private long pesel;
 
     @ManyToMany
     @JoinColumn
     private Set<Role> roles;
+
+    @ManyToMany
+    @JoinColumn
+    private Set<Specialization> specializations;
+
+    @ManyToMany
+    @JoinColumn
+    private Set<Visit> visits;
+
+    @ManyToOne
+    private AddressUser addressUser;
+
+
+//    @OneToMany(mappedBy = "appUser")
+//    private List<TermVisit> termVisitList;
 
     @Transient
     private int nrRoli;
@@ -74,21 +76,6 @@ public class AppUser {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public int getActive() {
         return active;
@@ -130,27 +117,36 @@ public class AppUser {
         this.activationCode = activationCode;
     }
 
-    public String getAddress() {
-        return address;
+
+    public Set<Visit> getVisits() {
+        return visits;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 
-    public String getSex() {
-        return sex;
+    public AddressUser getAddressUser() {
+        return addressUser;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setAddressUser(AddressUser addressUser) {
+        this.addressUser = addressUser;
     }
 
-    public long getPesel() {
-        return pesel;
+    public Set<Specialization> getSpecializations() {
+        return specializations;
     }
 
-    public void setPesel(long pesel) {
-        this.pesel = pesel;
+    public void setSpecializations(Set<Specialization> specializations) {
+        this.specializations = specializations;
     }
+
+//    public List<TermVisit> getTermVisitList() {
+//        return termVisitList;
+//    }
+//
+//    public void setTermVisitList(List<TermVisit> termVisitList) {
+//        this.termVisitList = termVisitList;
+//    }
 }
