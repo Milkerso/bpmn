@@ -12,7 +12,7 @@
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 </head>
 <body>
-<form id="PersonalDataForm" action="/freeterms" method="POST">
+<form id="PersonalDataForm" action="/saveCompleteDetails" method="POST">
     <div class="container">
         <form role="form">
             <h2>Complete Visit Details</h2>
@@ -42,15 +42,17 @@
                 <label for="NFZ" class="col-sm-5 control-label">NFZ</label>
                 <label><input type="checkbox" id="NFZ" name="NFZ"> Check</label>
             </div>
-                <div class="row">
-                    <div class="col-sm">
-                    <button type="submit" class="btn btn-primary btn-block" action="/freeterms" >Save</button>
-                    </div>
-                    <div class="col-sm">
-                        <button type="button" class="btn btn-primary btn-block"
-                                onclick="window.location.href='${pageContext.request.contextPath}/personaldata'">Reject</button>
-                    </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-primary btn-block">Save</button>
                 </div>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary btn-block"
+                            onclick="window.location.href='${pageContext.request.contextPath}/personaldata'">Reject
+                    </button>
+                </div>
+            </div>
         </form>
     </div> <!-- ./container -->
 
