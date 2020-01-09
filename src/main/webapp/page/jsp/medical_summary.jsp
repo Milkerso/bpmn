@@ -42,15 +42,15 @@
                 <label for="NFZ" class="col-sm-5 control-label">NFZ</label>
                 <label><input type="checkbox" id="NFZ" name="NFZ"> Check</label>
             </div>
-                <div class="row">
-                    <div class="col-sm">
+            <div class="row">
+                <div class="col-sm">
                     <button type="submit" class="btn btn-primary btn-block" action="/freeterms" >Save</button>
-                    </div>
-                    <div class="col-sm">
-                        <button type="button" class="btn btn-primary btn-block"
-                                onclick="window.location.href='${pageContext.request.contextPath}/personaldata'">Reject</button>
-                    </div>
                 </div>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary btn-block"
+                            onclick="window.location.href='${pageContext.request.contextPath}/form'">Reject</button>
+                </div>
+            </div>
         </form>
     </div> <!-- ./container -->
 
