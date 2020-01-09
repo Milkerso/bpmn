@@ -18,4 +18,10 @@ public class FormController {
     public String showCompleteVisitForm() {
         return "complete_visit_details";
     }
+
+    @GET
+    @RequestMapping(value = "/freeterms")
+    public String showDoctorsFreeTerms() {
+        return "doctors_free_terms";
+    }
 }
