@@ -24,6 +24,7 @@
         <java.version>8</java.version>
     </properties>
 
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -107,6 +108,12 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -126,6 +133,7 @@
             </plugin>
         </plugins>
     </build>
+
 
 
 </project>

@@ -12,7 +12,7 @@
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 </head>
 <body>
-<form id="PersonalDataForm" action="/visit" method="POST">
+<form id="PersonalDataForm" action="/saveCompleteDetails" method="POST">
     <div class="container">
         <form role="form">
             <h2>Complete Visit Details</h2>
