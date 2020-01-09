@@ -49,18 +49,14 @@
             <div class="row">
                 <div class="col-sm">
                     <button type="submit" class="btn btn-primary btn-block" action="/medicalsummary" >Save</button>
+
                 </div>
                 <div class="col-sm">
                     <button type="button" class="btn btn-primary btn-block"
                             onclick="window.location.href='${pageContext.request.contextPath}/form'">Reject</button>
                 </div>
             </div>
-            <div class="row" style="margin-top:15px;">
-            <div class="col-sm">
-                <button type="button" class="btn btn-primary btn-block"
-                        onclick="window.location.href='${pageContext.request.contextPath}/complete_visit_details'">Edit</button>
-            </div>
-            </div>
+
         </form>
     </div> <!-- ./container -->
 

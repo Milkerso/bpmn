@@ -75,7 +75,6 @@
                     </div>
                     <div class="col-sm">
                         <button type="button" class="btn btn-primary btn-block"
-                                onclick="window.location.href='${pageContext.request.contextPath}/form'">Reject</button>
                                 onclick="window.location.href='${pageContext.request.contextPath}/visitdetails'">Reject</button>
                     </div>
                 </div>
