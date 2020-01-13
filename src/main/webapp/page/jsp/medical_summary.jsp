@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="/resources/css/complete_visit_details.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/css/medical_summary.css"/>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,37 +16,37 @@
     <div class="container">
         <form role="form">
             <h2>Medical Summary</h2>
-            <div class="form-group" style="margin-top:15px;">
-                <div class="row">
-                <label class="col-sm-8 control-label">Doctor</label>
+            <div class="form-group" style="margin-top:20px;">
+                <div class="row styl" style="margin-left:15px;">
+                <label class="col-sm-8 control-label"><strong>Doctor</strong></label>
                 <label class="col-sm-4">Jakiś lekarz</label>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="row">
-                <label class="col-sm-8 control-label">Picked specialization</label>
+            <div class="form-group przerwa">
+                <div class="row styl" style="margin-left:15px;">
+                <label class="col-sm-8 control-label"><strong>Picked specialization</strong></label>
                 <label class="col-sm-4">Jakaś specjalizacja</label>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="row">
-                <label class="col-sm-8 control-label">Picked term</label>
+            <div class="form-group przerwa">
+                <div class="row styl" style="margin-left:15px;">
+                <label class="col-sm-8 control-label"><strong>Picked term</strong></label>
                 <label class="col-sm-4">Jakiś termin</label>
                 </div>
             </div>
-            <div class="form-group" style="margin-top:15px;">
-                <div class="row">
-                <label for="urgent" class="col-sm-8 control-label">Urgent Examination</label>
+            <div class="form-group przerwa">
+                <div class="row styl" style="margin-left:15px;">
+                <label for="urgent" class="col-sm-8 control-label"><strong>Urgent Examination</strong></label>
                 <label class="col-sm-4"><input type="checkbox" id="urgent" name="urgent"> Check</label>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="row">
-                <label for="NFZ" class="col-sm-8 control-label">NFZ</label>
+            <div class="form-group przerwa">
+                <div class="row styl" style="margin-left:15px;">
+                <label for="NFZ" class="col-sm-8 control-label"><strong>NFZ</strong></label>
                 <label class="col-sm-4"><input type="checkbox" id="NFZ" name="NFZ"> Check</label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top:50px;">
                 <div class="col-sm">
                     <button type="submit" class="btn btn-primary btn-block" action="/medicalsummary" >Save</button>
                 </div>
