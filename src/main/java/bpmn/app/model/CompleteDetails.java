@@ -11,7 +11,7 @@ public class CompleteDetails {
     private int id;
 
     @NotNull
-    private String urgent;
+    private boolean urgent;
 
     @NotNull
     private String specialization;
@@ -20,7 +20,7 @@ public class CompleteDetails {
     private String doctor;
 
     @NotNull
-    private int NFZ;
+    private boolean NFZ;
 
     public int getId() {
         return id;
@@ -30,13 +30,7 @@ public class CompleteDetails {
         this.id = id;
     }
 
-    public String getUrgent() {
-        return urgent;
-    }
 
-    public void setUrgent(String urgent) {
-        this.urgent = urgent;
-    }
 
     public String getSpecialization() {
         return specialization;
@@ -54,11 +48,19 @@ public class CompleteDetails {
         this.doctor = doctor;
     }
 
-    public int getNFZ() {
+    public boolean isUrgent() {
+        return urgent;
+    }
+
+    public void setUrgent(boolean urgent) {
+        this.urgent = urgent;
+    }
+
+    public boolean isNFZ() {
         return NFZ;
     }
 
-    public void setNFZ(int NFZ) {
+    public void setNFZ(boolean NFZ) {
         this.NFZ = NFZ;
     }
 }

@@ -14,7 +14,7 @@
 <body>
 <form id="PersonalDataForm" action="/saveCompleteDetails" method="POST">
     <div class="container">
-        <form role="form">
+        <form role="form" style="background-color: black">
             <h2>Complete Visit Details</h2>
             <div class="form-group" style="margin-top:15px;">
                 <label for="urgent" class="col-sm-5 control-label">Urgent Examination</label>
@@ -45,11 +45,6 @@
             <div class="row">
                 <div class="col-sm">
                     <button type="submit" class="btn btn-primary btn-block">Save</button>
-                </div>
-                <div class="col-sm">
-                    <button type="button" class="btn btn-primary btn-block"
-                            onclick="window.location.href='${pageContext.request.contextPath}/personaldata'">Reject
-                    </button>
                 </div>
             </div>
         </form>

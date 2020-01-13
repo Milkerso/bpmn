@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
-@Repository("completeDetailsRepository")
+@Repository
 public interface CompleteDetailsRepository extends JpaRepository<CompleteDetails, Integer> {
 }

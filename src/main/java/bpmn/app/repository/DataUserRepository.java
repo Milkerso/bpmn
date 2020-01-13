@@ -5,7 +5,7 @@ import bpmn.app.model.DataUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository("dataUserRepository")
+@Repository
 public interface DataUserRepository extends JpaRepository<DataUser, Integer> {
 
 

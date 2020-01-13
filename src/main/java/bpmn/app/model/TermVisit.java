@@ -6,7 +6,6 @@ import javax.validation.constraints.NotNull;
 
 
 @Entity
-@Table(name = "termVisit")
 public class TermVisit {
 
     @Id

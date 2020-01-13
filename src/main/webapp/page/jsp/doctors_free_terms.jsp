@@ -22,6 +22,7 @@
 
     }
 </script>
+<form id="PersonalDataForm1" action="/saveTermsDoctors" method="POST">
 <div align="center">
     <div style="margin-top:100px;" class="container">
         <form role="form">
@@ -62,6 +63,18 @@
                                     <td style="vertical-align: middle; text-align: center;"><%--<c:out value="${u.id }" />--%>410</td>
                                     <td style="vertical-align: middle; text-align: center;"><label class="checkbox-inline check"><input type="checkbox" name="choose" value="2"> Choose this term</label></td>
                                 </tr>
+                                <tr>
+                                    <td style="vertical-align: middle; text-align: center;" class="hidden-xs"><%--<c:out value="${u.id }" />--%>11.05.2020</td>
+                                    <td style="vertical-align: middle; text-align: center;" class="hidden-xs"><%--<c:out value="${u.id }" />--%>13:00</td>
+                                    <td style="vertical-align: middle; text-align: center;"><%--<c:out value="${u.id }" />--%>310</td>
+                                    <td style="vertical-align: middle; text-align: center;"><label class="checkbox-inline check"><input type="checkbox" name="choose" value="2"> Choose this term</label></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle; text-align: center;" class="hidden-xs"><%--<c:out value="${u.id }" />--%>22.07.2020</td>
+                                    <td style="vertical-align: middle; text-align: center;" class="hidden-xs"><%--<c:out value="${u.id }" />--%>12:00</td>
+                                    <td style="vertical-align: middle; text-align: center;"><%--<c:out value="${u.id }" />--%>210</td>
+                                    <td style="vertical-align: middle; text-align: center;"><label class="checkbox-inline check"><input type="checkbox" name="choose" value="2"> Choose this term</label></td>
+                                </tr>
 <%--                            </c:forEach>--%>
                             </tbody>
                         </table>
@@ -71,11 +84,11 @@
                 </div>
                 <div class="row">
                     <div class="col-sm">
-                        <button type="submit" class="btn btn-primary btn-block" action="/visitdetails" >Save</button>
+                        <button type="submit" class="btn btn-primary btn-block" >Save</button>
                     </div>
                     <div class="col-sm">
                         <button type="button" class="btn btn-primary btn-block"
-                                onclick="window.location.href='${pageContext.request.contextPath}/visitdetails'">Reject</button>
+                                onclick="window.location.href='${pageContext.request.contextPath}/'">Reject</button>
                     </div>
                 </div>
             </div>
@@ -83,7 +96,7 @@
         </form>
     </div>
 </div>
-
+</form>
 </body>
 </html>
 

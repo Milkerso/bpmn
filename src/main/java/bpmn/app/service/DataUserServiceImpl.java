@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service("dataUserService")
 public class DataUserServiceImpl implements DataUserService {
 
-    @Qualifier("dataUserRepository")
+
     @Autowired
     private DataUserRepository dataUserRepository;
 
