@@ -44,10 +44,10 @@
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                    <button type="submit" class="btn btn-success btn-block">Save</button>
                 </div>
                 <div class="col-sm">
-                    <button type="button" class="btn btn-primary btn-block"
+                    <button type="button" class="btn btn-danger btn-block"
                             onclick="window.location.href='${pageContext.request.contextPath}/personaldata'">Reject
                     </button>
                 </div>

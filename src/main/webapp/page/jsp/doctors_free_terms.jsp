@@ -24,10 +24,9 @@
 </script>
 <div align="center">
     <div style="margin-top:100px;" class="container">
-        <form role="form">
+        <form role="form" action="/medicalsummary" method="POST">
         <div class="row">
             <div class="col-sm-12 col-sm-offset-1">
-
                 <div class="panel panel-default panel-table">
                     <div class="panel-heading">
                         <div class="row">
@@ -40,10 +39,10 @@
                         <table style="vertical-align: middle; text-align: center;" class="table table-striped table-bordered table-list">
                             <thead>
                             <tr>
-                               <th class="hidden-xs text-center">Date</th>
-                                <th class="text-center">Hour</th>
-                                <th class="text-center">Room</th>
-                                <th class="text-center">Pick term</th>
+                               <th class="hidden-xs text-center kolor">Date</th>
+                                <th class="text-center kolor">Hour</th>
+                                <th class="text-center kolor">Room</th>
+                                <th class="text-center kolor">Pick term</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -61,6 +60,12 @@
                                     <td style="vertical-align: middle; text-align: center;"><%--<c:out value="${u.id }" />--%>410</td>
                                     <td style="vertical-align: middle; text-align: center;"><label class="checkbox-inline check"><input type="checkbox" name="choose" value="2"> Choose this term</label></td>
                                 </tr>
+                                <tr>
+                                    <td style="vertical-align: middle; text-align: center;" class="hidden-xs"><%--<c:out value="${u.id }" />--%>14.01.2020</td>
+                                    <td style="vertical-align: middle; text-align: center;" class="hidden-xs"><%--<c:out value="${u.id }" />--%>15:00</td>
+                                    <td style="vertical-align: middle; text-align: center;"><%--<c:out value="${u.id }" />--%>203</td>
+                                    <td style="vertical-align: middle; text-align: center;"><label class="checkbox-inline check"><input type="checkbox" name="choose" value="1"> Choose this term</label></td>
+                                </tr>
 <%--                            </c:forEach>--%>
                             </tbody>
                         </table>
@@ -70,10 +75,10 @@
                 </div>
                 <div class="row">
                     <div class="col-sm">
-                        <button type="submit" class="btn btn-primary btn-block" action="/visitdetails" >Save</button>
+                        <button type="submit" class="btn btn-success btn-block" action="/medicalsummary" >Save</button>
                     </div>
                     <div class="col-sm">
-                        <button type="button" class="btn btn-primary btn-block"
+                        <button type="button" class="btn btn-danger btn-block"
                                 onclick="window.location.href='${pageContext.request.contextPath}/form'">Reject</button>
                     </div>
                 </div>

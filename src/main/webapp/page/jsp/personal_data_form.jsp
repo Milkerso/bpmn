@@ -65,7 +65,7 @@
             </div>
         </div>
         </div><!-- /.form-group -->
-        <button type="submit" class="btn btn-primary btn-block">Save</button>
+        <button type="submit" class="btn btn-success btn-block">Save</button>
         </form>
 </div> <!-- ./container -->
 

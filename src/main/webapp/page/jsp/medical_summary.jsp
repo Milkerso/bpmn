@@ -37,27 +37,27 @@
             <div class="form-group przerwa">
                 <div class="row styl" style="margin-left:15px;">
                 <label for="urgent" class="col-sm-8 control-label"><strong>Urgent Examination</strong></label>
-                <label class="col-sm-4"><input type="checkbox" id="urgent" name="urgent"> Check</label>
+                <label class="col-sm-4"><input type="checkbox" id="urgent" name="urgent" checked="checked"> Check</label>
                 </div>
             </div>
             <div class="form-group przerwa">
                 <div class="row styl" style="margin-left:15px;">
                 <label for="NFZ" class="col-sm-8 control-label"><strong>NFZ</strong></label>
-                <label class="col-sm-4"><input type="checkbox" id="NFZ" name="NFZ"> Check</label>
+                <label class="col-sm-4"><input type="checkbox" id="NFZ" name="NFZ" checked="checked"> Check</label>
                 </div>
             </div>
             <div class="row" style="margin-top:50px;">
                 <div class="col-sm">
-                    <button type="submit" class="btn btn-primary btn-block" action="/medicalsummary" >Save</button>
+                    <button type="submit" class="btn btn-success btn-block" action="/medicalsummary" >Accept</button>
                 </div>
                 <div class="col-sm">
-                    <button type="button" class="btn btn-primary btn-block"
+                    <button type="button" class="btn btn-danger btn-block"
                             onclick="window.location.href='${pageContext.request.contextPath}/form'">Reject</button>
                 </div>
             </div>
-            <div class="row" style="margin-top:15px;">
+            <div class="row text-center" style="margin-top:15px;">
             <div class="col-sm">
-                <button type="button" class="btn btn-primary btn-block"
+                <button type="button" class="btn btn-primary" style="width:500px;"
                         onclick="window.location.href='${pageContext.request.contextPath}/complete_visit_details'">Edit</button>
             </div>
             </div>
