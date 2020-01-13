@@ -1,6 +1,6 @@
 package bpmn.app.service;
 
-import bpmn.app.model.User;
+import bpmn.app.model.AppUser;
 import bpmn.app.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUserByEmail(String email) {
+    public AppUser findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
@@ -28,8 +28,8 @@ public class UserServiceImpl implements UserService {
         userRepository.updateUserPassword(bCryptPasswordEncoder.encode(newPassword), email);
     }
 
-    @Override
-    public void updateUserProfile(String newName, String newLastName, String newEmail, int id) {
-        userRepository.updateUserProfile(newName, newLastName, newEmail, id);
-    }
+//    @Override
+//    public void updateUserProfile(String newName, String newLastName, String newEmail, int id) {
+//        userRepository.updateUserProfile(newName, newLastName, newEmail, id);
+//    }
 }

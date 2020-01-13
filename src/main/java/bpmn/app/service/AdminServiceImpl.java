@@ -1,6 +1,6 @@
 package bpmn.app.service;
 
-import bpmn.app.model.User;
+import bpmn.app.model.AppUser;
 import bpmn.app.repository.AdminRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,15 +24,15 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Page<User> findAll(Pageable pageable) {
-        Page<User> userList = adminRepository.findAll(pageable);
+    public Page<AppUser> findAll(Pageable pageable) {
+        Page<AppUser> userList = adminRepository.findAll(pageable);
         return userList;
     }
 
     @Override
-    public User findUserById(int id) {
-        User user = adminRepository.findUserById(id);
-        return user;
+    public AppUser findUserById(int id) {
+        AppUser appUser = adminRepository.findUserById(id);
+        return appUser;
     }
 
     @Override
@@ -42,8 +42,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Page<User> findAllSearch(String param, Pageable pageable) {
-        Page<User> userList = adminRepository.findAllSearch(param, pageable);
+    public Page<AppUser> findAllSearch(String param, Pageable pageable) {
+        Page<AppUser> userList = adminRepository.findAllSearch(param, pageable);
         return userList;
     }
 

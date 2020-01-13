@@ -52,14 +52,14 @@ function startSerach(pParam){
 <table width="1000" border="0" cellpadding="6" cellspacing="2">
 	<tr bgcolor="#ffddcc">
 		<td width="40" align="center"></td>
-		<td width="40" align="center"><b><s:message code="admin.user.id"/></b></td>
+		<td width="40" align="center"><b><s:message code="admin.appUser.id"/></b></td>
 		<td width="200" align="center"><b><s:message code="register.name"/></b></td>
 		<td width="200" align="center"><b><s:message code="register.lastName"/></b></td>
 		<td width="220" align="center"><b><s:message code="register.email"/></b></td>
 		<td width="100" align="center"><b><s:message code="profil.czyAktywny"/></b></td>
 		<td width="200" align="center"><b><s:message code="profil.rola"/></b></td>
 	</tr>
-	<c:forEach var="u" items="${userList }">
+	<c:forEach var="u" items="${appUserList }">
 		<c:set var="licznik" value="${licznik+1}"/>
 		<tr onmouseover="changeTrBg(this)" onmouseout="defaultTrBg(this)">
 			<td align="right"><c:out value="${licznik }"/></td>
@@ -83,7 +83,7 @@ function startSerach(pParam){
 					<font color="green"><s:message code="word.admin"/></font>
 				</c:when>
 				<c:otherwise>
-					<s:message code="word.user"/>
+					<s:message code="word.appUser"/>
 				</c:otherwise>
 			</c:choose>
 			</td>

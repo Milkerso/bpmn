@@ -14,7 +14,7 @@ server.tomcat.additional-tld-skip-patterns=hk2-utils.jar,javax.annotation-api.ja
 #DATA SOURCE I BAZA DANYCH
 spring.datasource.url=jdbc:postgresql://localhost:5432/BPMN?characterEncoding=utf-8
 spring.datasource.username=postgres
-spring.datasource.password=hujhuj123
+spring.datasource.password=12345
 spring.datasource.testWhileIdle=true
 spring.datasource.validationQuery=SELECT 1
 spring.jpa.properties.hibernate.id.new_generator_mappings=false
@@ -44,4 +44,4 @@ spring.mail.password=Haslo123
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 
-prod.server.address=http://localhost:8081
+prod.server.address=http://localhost:8080

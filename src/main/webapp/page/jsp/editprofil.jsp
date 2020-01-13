@@ -19,7 +19,7 @@
 
 <h2 align="center"><s:message code="profilEdit.pageName"/></h2>
 
-<sf:form id="usersForm" action="updateprofil" modelAttribute="user"
+<sf:form id="usersForm" action="updateprofil" modelAttribute="appUser"
 		enctype="multipart/form-data" method="POST">
 		
 		<sf:hidden path="id"/>

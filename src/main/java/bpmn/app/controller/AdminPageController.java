@@ -1,6 +1,6 @@
 package bpmn.app.controller;
 
-import bpmn.app.model.User;
+import bpmn.app.model.AppUser;
 import bpmn.app.service.AdminService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,13 +49,13 @@ public class AdminPageController {
     @RequestMapping(value = "/admin/users/{page}")
     @Secured(value = {"ROLE_ADMIN"})
     public String openAdminAllUsersPage(@PathVariable("page") int page, Model model) {
-        Page<User> pages = getAllUsersPageable(page - 1, false, null);
+        Page<AppUser> pages = getAllUsersPageable(page - 1, false, null);
         int totalPages = pages.getTotalPages();
         int currentPage = pages.getNumber();
-        List<User> userList = pages.getContent();
+        List<AppUser> appUserList = pages.getContent();
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("currentPage", currentPage + 1);
-        model.addAttribute("userList", userList);
+        model.addAttribute("userList", appUserList);
         model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
         return "admin/users";
     }
@@ -64,26 +64,26 @@ public class AdminPageController {
     @RequestMapping(value = "/admin/users/edit/{id}")
     @Secured(value = {"ROLE_ADMIN"})
     public String getUserToEdit(@PathVariable("id") int id, Model model) {
-        User user = new User();
-        user = adminService.findUserById(id);
+        AppUser appUser = new AppUser();
+        appUser = adminService.findUserById(id);
         Map<Integer, String> roleMap = new HashMap<Integer, String>();
         roleMap = prepareRoleMap();
         Map<Integer, String> activityMap = new HashMap<Integer, String>();
         activityMap = prepareActivityMap();
-        int rola = user.getRoles().iterator().next().getId();
-        user.setNrRoli(rola);
+        int rola = appUser.getRoles().iterator().next().getId();
+        appUser.setNrRoli(rola);
         model.addAttribute("roleMap", roleMap);
         model.addAttribute("activityMap", activityMap);
-        model.addAttribute("user", user);
+        model.addAttribute("user", appUser);
         return "admin/useredit";
     }
 
     @POST
     @RequestMapping(value = "/admin/updateuser/{id}")
     @Secured(value = "ROLE_ADMIN")
-    public String updateUser(@PathVariable("id") int id, User user) {
-        int nrRoli = user.getNrRoli();
-        int czyActive = user.getActive();
+    public String updateUser(@PathVariable("id") int id, AppUser appUser) {
+        int nrRoli = appUser.getNrRoli();
+        int czyActive = appUser.getActive();
         adminService.updateUser(id, nrRoli, czyActive);
         return "redirect:/admin/users/1";
     }
@@ -93,16 +93,16 @@ public class AdminPageController {
     @Secured(value = "ROLE_ADMIN")
     public String openSearchUsersPage(@PathVariable("searchWord") String searchWord,
                                       @PathVariable("page") int page, Model model) {
-        Page<User> pages = getAllUsersPageable(page - 1, true, searchWord);
+        Page<AppUser> pages = getAllUsersPageable(page - 1, true, searchWord);
         int totalPages = pages.getTotalPages();
         int currentPage = pages.getNumber();
-        List<User> userList = pages.getContent();
+        List<AppUser> appUserList = pages.getContent();
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("currentPage", currentPage + 1);
-        model.addAttribute("userList", userList);
+        model.addAttribute("userList", appUserList);
         model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
         model.addAttribute("searchWord", searchWord);
-        model.addAttribute("userList", userList);
+        model.addAttribute("userList", appUserList);
         return "admin/usersearch";
     }
 
@@ -118,14 +118,14 @@ public class AdminPageController {
 
     // Metody uzytkowe
     // Pobranie listy userów
-    private Page<User> getAllUsersPageable(int page, boolean search, String param) {
-        Page<User> pages;
+    private Page<AppUser> getAllUsersPageable(int page, boolean search, String param) {
+        Page<AppUser> pages;
         if (!search) {
             pages = adminService.findAll(PageRequest.of(page, ELEMENTS));
         } else {
             pages = adminService.findAllSearch(param, PageRequest.of(page, ELEMENTS));
         }
-        for (User users : pages) {
+        for (AppUser users : pages) {
             int numerRoli = users.getRoles().iterator().next().getId();
             users.setNrRoli(numerRoli);
         }

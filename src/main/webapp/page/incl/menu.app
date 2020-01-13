@@ -26,7 +26,7 @@
 						
 					<sec:authorize access="isAuthenticated()">
 					<li class="nav-item">
-						<a class="nav-link" href="/profil"><s:message code="menu.profil"/></a>
+						<a class="nav-link" href="/personal_data_form"><s:message code="menu.profil"/></a>
 					</li>
 					
 					<li class="nav-item">

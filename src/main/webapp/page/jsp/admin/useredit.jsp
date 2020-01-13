@@ -20,9 +20,9 @@
 <p align="center">
 		<c:out value="${message }" />
 </p>
-<sf:form id="usersForm" action="${pageContext.request.contextPath}/admin/updateuser/${user.id}" modelAttribute="user"
+<sf:form id="usersForm" action="${pageContext.request.contextPath}/admin/updateuser/${appUser.id}" modelAttribute="appUser"
 		enctype="multipart/form-data" method="POST">
-		<sf:hidden path="id" value="${user.id}"/>
+		<sf:hidden path="id" value="${appUser.id}"/>
 		<table width="500" border="0" cellpadding="4" cellspacing="1"
 			align="center">
 
