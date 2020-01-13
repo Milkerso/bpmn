@@ -44,6 +44,7 @@
                                 <th class="text-center">Hour</th>
                                 <th class="text-center">Room</th>
                                 <th class="text-center">Choose</th>
+                                <th class="text-center">Pick term</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -75,6 +76,7 @@
                     <div class="col-sm">
                         <button type="button" class="btn btn-primary btn-block"
                                 onclick="window.location.href='${pageContext.request.contextPath}/form'">Reject</button>
+                                onclick="window.location.href='${pageContext.request.contextPath}/visitdetails'">Reject</button>
                     </div>
                 </div>
             </div>

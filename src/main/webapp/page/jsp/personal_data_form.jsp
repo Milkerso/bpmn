@@ -12,14 +12,14 @@
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 </head>
 <body>
-<form id="PersonalDataForm" action="/visitdetails" method="POST">
+<form id="PersonalDataForm" action="/savePersonalData" method="POST">
 <div class="container">
     <form role="form" style="background-color: black">
             <h2>Personal Data Form</h2>
         <div class="form-group">
             <label for="firstName" class="col-sm-3 control-label">First Name</label>
             <div class="col-sm-12">
-                <input type="text" id="firstName" name="firstName" path="firstName" class="form-control" placeholder="First Name" required>
+                <input type="text" id="firstName" name="name" path="name" class="form-control" placeholder="First Name" required>
             </div>
         </div>
         <div class="form-group">
@@ -43,7 +43,7 @@
         <div class="form-group">
             <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
             <div class="col-sm-12">
-                <input type="date" id="birthDate" class="form-control">
+                <input type="date" id="birthDate" name="birthDate" path="birthDate"class="form-control">
             </div>
         </div>
         <div class="form-group">
